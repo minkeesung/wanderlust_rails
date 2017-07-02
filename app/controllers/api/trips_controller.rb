@@ -4,7 +4,7 @@ module Api
     before_action :set_trip, only: [:show, :destroy]
 
     def index
-        render json: Trip.all
+        render json: {trips: Trip.all}
     end
 
     def create
@@ -20,7 +20,7 @@ module Api
     def show
     end
 
-    def distroy
+    def destroy
         @trip.destroy
         render :show, status: :ok
     end
@@ -31,7 +31,7 @@ module Api
     end
 
     def trip_params
-        params.permit(:budget, :origin, :date, :password, :booked?, :user_id)
+        params.require(:trip).permit(:budget, :origin, :date, :passengers)
     end
 
   end
