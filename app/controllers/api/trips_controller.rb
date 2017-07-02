@@ -1,5 +1,5 @@
 module Api
-  class PostController < ApplicationController
+  class TripsController < ApplicationController
 
     before_action :set_trip, only: [:show, :destroy]
 
@@ -8,12 +8,21 @@ module Api
     end
 
     def create
+        @trip = Trip.new(trip_params)
+        if @trip.save
+            render json: @trip, status: 201
+        else
+
+            render json: { errors: @trip.errors.full_messages }, status: 422
+        end
     end
 
     def show
     end
 
     def distroy
+        @trip.destroy
+        render :show, status: :ok
     end
 
     private

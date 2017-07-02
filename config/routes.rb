@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   namespace :api do
-    resources :trip
+    resources :trips
   end
 
   resources :users, only: [:new, :create, :show, :destroy]
