@@ -3,6 +3,10 @@ Rails.application.routes.draw do
     resources :trips
   end
 
+
+  namespace :api do
+    resources :users
+  end
   resources :users, only: [:new, :create, :show, :destroy]
   root 'users#new'
 

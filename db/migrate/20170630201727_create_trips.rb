@@ -6,7 +6,7 @@ class CreateTrips < ActiveRecord::Migration[5.1]
       t.date :date
       t.integer :passengers
       t.boolean :booked?
-      t.references :user
+      t.integer :user_id
 
       t.timestamps
     end

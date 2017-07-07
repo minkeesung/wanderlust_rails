@@ -8,6 +8,7 @@ module Api
     end
 
     def create
+
         @trip = Trip.new(trip_params)
         if @trip.save
             render json: @trip, status: 201
