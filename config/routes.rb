@@ -3,6 +3,10 @@ Rails.application.routes.draw do
     resources :trips
   end
 
+  namespace :api do
+    resources :sessions
+  end
+
 
   namespace :api do
     resources :users
