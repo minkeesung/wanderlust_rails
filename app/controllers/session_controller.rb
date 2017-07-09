@@ -6,7 +6,7 @@ include sessionsHelper
 
   def create
     @user = User.find_by(email: params[:user][:email])
-      session[:user_id] = @user.user_idredirect_to user_path(@user)
+      session[:user_id] = @user.user_id redirect_to user_path(@user)
     else
       @errors = ["invalid Email or Password"]
       render "new"
