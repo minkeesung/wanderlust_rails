@@ -1,24 +1,28 @@
 <%= form_for :trip do |f| %>
+<div class="form-group">
   <p>
     <%= f.label :budget %><br>
     <%= f.text_field :budget %>
   </p>
-
+</div>
+<div class="form-group">
   <p>
     <%= f.label :origin %><br>
     <%= f.text_field :origin %>
   </p>
-
+</div>
+<div class="form-group">
   <p>
     <%= f.label :date %><br>
     <%= f.date_field :date %>
   </p>
-
+</div>
+<div class="form-group">
   <p>
     <%= f.label :passengers %><br>
     <%= f.number_field :passengers %>
   </p>
-
+</div>
   <p>
     <%= f.submit %>
   </p>
