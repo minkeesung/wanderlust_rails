@@ -20,6 +20,10 @@ class TripController < ApplicationController
 
   end
 
+  def destinations
+    
+  end
+
   private
 
   def trip_params
